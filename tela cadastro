@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Cadastro Flutter',
+      title: 'Cadastro',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -45,7 +45,7 @@ class _TelaCadastroState extends State<TelaCadastro> {
               TextFormField(
                 decoration: InputDecoration(labelText: 'Nome'),
                 validator: (value) =>
-                    value!.isEmpty ? 'Informe seu nome' : null,
+                    value!.isEmpty ? 'Informe seu usuario' : null,
                 onSaved: (value) => nome = value!,
               ),
               TextFormField(
@@ -66,8 +66,6 @@ class _TelaCadastroState extends State<TelaCadastro> {
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
-
-                    // Aqui você pode salvar os dados em um backend, etc.
 
                     Navigator.pushReplacement(
                       context,
